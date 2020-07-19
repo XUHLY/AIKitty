@@ -1,10 +1,40 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8777
+  connection-timeout: 5000
+  context-path: /aischool
+
 test:
   file:
-    dir: E:/aischool/audiotemp/
-server:
-    context-path: /aischool
+    dir: /usr/local/tomcats/aischool/audiotemp/
+
 spring:
-    mvc:
-        static-path-pattern: /** #所有的静态资源请求
-    resources:
-        static-locations: classpath:/META-INF/resources/,file:E://aischool/audiotemp/,classpath:/resources/,classpath:/static/,classpath:/public/ #资源映射地址为file:D://User/，图片存放的真实路径
+  #所有的静态资源请求
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: file:/usr/local/tomcats/aischool/audiotemp/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  datasource:
+    url: jdbc:mysql://47.100.103.132/:3306/aischool
+    username: root
+    password: huang199681
+    driver-class-name: com.mysql.jdbc.Driver
+
+#项目自定义配置
+application:
+  #接口参数校验
+  key: 971026
+  #百度相关参数
+  baidu:
+    #unit相关配置,百度unit平台获取
+    unit:
+      app_id: yourself app_id
+      api_key: yourself api_key
+      secret_key: yourself secret_key
+  #语音文件存储文件夹
+  file:
+    dir: /usr/local/tomcats/aischool/audiotemp/

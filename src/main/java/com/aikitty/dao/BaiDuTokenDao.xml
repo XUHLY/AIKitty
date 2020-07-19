@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="cn.org.aischool.dao.BaiDuTokenDao">
+<mapper namespace="com.aikitty.dao.BaiDuTokenDao">
 
 	<update id="updateToken">
 		update tb_baidutoken set token = #{token} where id =1 
