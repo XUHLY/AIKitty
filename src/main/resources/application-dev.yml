@@ -35,6 +35,8 @@ application:
       app_id: yourself app_id
       api_key: yourself api_key
       secret_key: yourself secret_key
+      #unit获取token的地址
+      authHost: https://aip.baidubce.com/oauth/2.0/token
   #语音文件存储文件夹
   file:
     dir: /usr/local/tomcats/aischool/audiotemp/
