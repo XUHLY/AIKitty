@@ -1,0 +1,44 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8777
+  connection-timeout: 5000
+  context-path: /aischool
+
+test:
+  file:
+    dir: /usr/local/tomcats/aischool/audiotemp/
+
+spring:
+  #所有的静态资源请求
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: file:/usr/local/tomcats/aischool/audiotemp/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  datasource:
+    url: jdbc:mysql://47.100.103.132/:3306/aischool
+    username: root
+    password: huang199681
+    driver-class-name: com.mysql.jdbc.Driver
+
+#项目自定义配置
+application:
+  #接口参数校验
+  key: 971026
+  #百度相关参数
+  baidu:
+    #unit相关配置,百度unit平台获取
+    unit:
+      app_id: 15332293
+      api_key: m9iKRQVwwjW0FP2CZBkIut5C
+      secret_key: 54gFMUf4nNnzZ4CAxMu5pYjrkRjZLMmG
+      #unit对话地址
+      talkUrl: https://aip.baidubce.com/rpc/2.0/unit/service/chat
+      #unit获取token的地址
+      authHost: https://aip.baidubce.com/oauth/2.0/token
+  #文件存储文件夹
+  file:
+    dir: /usr/local/tomcats/aischool/audiotemp/
